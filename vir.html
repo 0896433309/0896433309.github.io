@@ -41,15 +41,14 @@ def func3():
     os.remove("pyvi.py")
 def func4():
     color = (82, 151, 135)
-    for i in range(2):
+    a = (204, 204, 204)
+    st = datetime.today() + timedelta(seconds = 60)
+    while st > datetime.today():
         s = pyautogui.screenshot(region=(0, 1030, 1920,1080))
         for x in range(s.width):
             for y in range(s.height):
                 if s.getpixel((x, y)) == color:
                     pyautogui.click(x, y + 1030)
-    a = (204, 204, 204)
-    st = datetime.today() + timedelta(seconds = 60)
-    while st > datetime.today():
         s = pyautogui.screenshot()
         if s.getpixel((1000,570))==a:
             pyautogui.click(1150,450)
