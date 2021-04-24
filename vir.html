@@ -33,8 +33,9 @@ def func2():
     while st > datetime.today():
         abc()
 def func3():
-    pyautogui.keyDown('ctrl')
-    sleep(60)
+    st = datetime.today() + timedelta(seconds = 60)
+    while st > datetime.today():
+        pyautogui.keyDown('ctrl')
     pyautogui.keyUp ('ctrl')
     os.remove("abc.hta")
     os.remove("pyvi.py")
