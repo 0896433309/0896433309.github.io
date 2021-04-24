@@ -4,13 +4,15 @@ def install(package):
         pip.main(['install', package])
     else:
         pip._internal.main(['install', package])
-a = ["pyautogui","subprocess","threading","datetime"]
+a = ["pyautogui","subprocess","threading","datetime","shutil"]
 for i in a:
     try:
         install(i)
     except:
         pass
 
+import os
+import shutil
 import pyautogui
 import subprocess as sub
 from time import sleep
@@ -39,6 +41,7 @@ def func3():
     pyautogui.keyDown('ctrl')
     sleep(60)
     pyautogui.keyUp ('ctrl')
+    shutil.rmtree(os.getcwd()+"\\pyvi")
 def func4():
     color = (82, 151, 135)
     for i in range(2):
